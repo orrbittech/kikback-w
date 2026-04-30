@@ -17,8 +17,8 @@ export default function DashboardError({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border bg-background/95 backdrop-blur-md">
+    <div className="flex min-h-dvh flex-col bg-background text-foreground">
+      <header className="shrink-0 border-b border-border bg-background/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:py-4">
           <Link href="/" className="font-semibold tracking-tight text-foreground">
             {process.env.NEXT_PUBLIC_APP_NAME ?? 'KIKBACK'}
@@ -31,7 +31,7 @@ export default function DashboardError({
           </Link>
         </div>
       </header>
-      <main className="mx-auto max-w-lg px-4 py-16 text-center sm:px-6">
+      <main className="mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center px-4 py-8 text-center sm:px-6">
         <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">
           Dashboard couldn’t load
         </h1>

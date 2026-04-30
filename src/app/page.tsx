@@ -241,8 +241,9 @@ export default function HomePage() {
                     Start earning in minutes
                   </h2>
                   <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/86">
-                    Wire Clerk, plug in checkout callbacks, and let {appName} run referral state
-                    end-to-end—so every code, discount, and reward shows up where you expect it.
+                    Connect authentication, plug in checkout callbacks, and let {appName} run
+                    referral state end-to-end—so every code, discount, and reward shows up where you
+                    expect it.
                   </p>
                 </div>
                 <div className="mt-10 flex flex-wrap gap-3 md:mt-0">

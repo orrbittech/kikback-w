@@ -18,6 +18,7 @@ import {
   previewRewardPointsFromSubtotalCents,
 } from '@/lib/referral-reward-points-preview';
 import { cn } from '@/lib/utils';
+import { DevSimulatePurchaseExplainer } from '@/components/dev-simulate-purchase-explainer';
 
 type OrderCompleteSuccess = {
   referralId: string;
@@ -367,8 +368,7 @@ export function DevSimulatePurchasePanel({
         `Simulated — ${data.rewardPoints.toLocaleString()} pts pending · purchase ${data.purchaseId.slice(0, 8)}… · ${at}`,
         { duration: 6000 },
       );
-      await queryClient.invalidateQueries({ queryKey: ['referrals', 'dashboard'] });
-      await queryClient.invalidateQueries({ queryKey: ['referrals', 'my-code'] });
+      await queryClient.invalidateQueries({ queryKey: ['referrals', 'me-summary'] });
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Network error');
     } finally {
@@ -392,6 +392,7 @@ export function DevSimulatePurchasePanel({
         <h2 className="mt-2 text-lg font-medium text-black dark:text-foreground">
           Simulate purchase
         </h2>
+        <DevSimulatePurchaseExplainer />
       </div>
       <form onSubmit={(e) => void simulatePurchase(e)} className="space-y-4">
         <div>
