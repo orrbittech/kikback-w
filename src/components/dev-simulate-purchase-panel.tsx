@@ -137,13 +137,13 @@ function noEligibleRowsMessage(params: {
 
   if (referralRows.length === 0) {
     base =
-      'No referrals loaded yet. Paste the buyer’s Clerk user id below (internal bootstrap), or have another user attach your code (POST /referrals/attach or ?ref=), then reload.';
+      'No referrals in Activity yet. Enter the buyer’s Clerk user id below (dev bootstrap), or have another user attach your code, then reload.';
   } else if (codeMatchRows.length === 0) {
     base =
-      'That code does not match any referral on your account. Use your current code (see “Your code”) or fix the field.';
+      'That code does not match any referral on your account. Use your current code (see “Your code”), enter a buyer Clerk id below, or fix the field.';
   } else {
     base =
-      'Could not resolve a referred user for this submission. Pick a buyer from the list or paste their Clerk user id.';
+      'Could not resolve a referred user. Pick a buyer from the list or enter a buyer Clerk id below.';
   }
 
   if (
@@ -430,9 +430,8 @@ export function DevSimulatePurchasePanel({
               className={inputClassName}
               placeholder="user_2abc…"
             />
-            <p className="mt-2 text-xs text-gray-600">
-              When Activity has no eligible referral, paste the buyer’s Clerk user id (second test account).
-              Bootstrap runs as your signed-in account via Clerk JWT (same as Simulate purchase).
+            <p className="mt-2 text-xs text-gray-600 dark:text-zinc-400">
+              Use a second Clerk account (buyer). Cannot be the same as the signed-in referrer — self-referral is blocked. Dev bootstrap creates the referral row, then the purchase is recorded.
             </p>
           </div>
         : null}
