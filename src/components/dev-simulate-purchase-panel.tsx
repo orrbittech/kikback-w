@@ -412,30 +412,6 @@ export function DevSimulatePurchasePanel({
           />
         </div>
 
-        {eligibleRows.length === 0 ?
-          <div>
-            <label
-              htmlFor="dev-manual-referred-id"
-              className="text-sm font-medium text-black dark:text-foreground"
-            >
-              Referred user Clerk ID
-            </label>
-            <input
-              id="dev-manual-referred-id"
-              type="text"
-              autoComplete="off"
-              spellCheck={false}
-              value={manualReferredClerkId}
-              onChange={(e) => setManualReferredClerkId(e.target.value)}
-              className={inputClassName}
-              placeholder="user_2abc…"
-            />
-            <p className="mt-2 text-xs text-gray-600 dark:text-zinc-400">
-              Use a second Clerk account (buyer). Cannot be the same as the signed-in referrer — self-referral is blocked. Dev bootstrap creates the referral row, then the purchase is recorded.
-            </p>
-          </div>
-        : null}
-
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <label className="inline-flex cursor-pointer items-center gap-2 text-sm text-black dark:text-foreground">
             <input
